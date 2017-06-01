@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
 
-import { AppComponent } from './app.component';
+import { ScoolarComponent } from './scoolar.component';
 import { LoginComponent } from './components/login/login.component';
 import { CalculationTableComponent } from './components/math/calculation-table/calculation-table.component';
 import { CalculationChainComponent } from './components/math/calculation-chain/calculation-chain.component';
@@ -13,7 +13,7 @@ import { MathComponent } from './components/math/math.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    ScoolarComponent,
     LoginComponent,
     CalculationTableComponent,
     CalculationChainComponent,
@@ -38,6 +38,6 @@ import { MathComponent } from './components/math/math.component';
     }])
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ScoolarComponent]
 })
-export class AppModule { }
+export class ScoolarModule { }
