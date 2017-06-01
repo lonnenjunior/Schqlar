@@ -5,5 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './scoolar.component.html'
 })
 export class ScoolarComponent {
-  title = 'app works!';
+  categories: string[];
+  constructor() { 
+    this.categories = [
+      'Math',
+      'French',
+      'Deutsch'
+    ];
+  }
 }
