@@ -1,0 +1,26 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      Einleitung
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      Hier kommt die Erklärung hin -> DYNAMISCH LADEN
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a class="card-footer-item is-primary" *ngIf="!wasStarted" (click)="start()">Start</a>
+  </footer>
+</div>
+
+<div class="card" *ngIf="component && wasStarted">
+  <div class="card-content">
+    <div>
+      <timer></timer>
+    </div>
+  </div>
+  <div class="card-content" [ngSwitch]="component">
+      <calculation-chain *ngSwitchCase="'calculation-chain'"></calculation-chain>
+  </div>
+</div>
