@@ -7,7 +7,7 @@
             <!--img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo"-->
             Scoolar
           </a>
-          <a class="nav-item is-tab is-hidden-mobile" *ngFor="let category of categories" [routerLink]="category" routerLinkActive="is-active">{{category}}</a>
+          <a class="nav-item is-tab is-hidden-mobile" *ngFor="let category of categories" [routerLink]="category.link" routerLinkActive="is-active">{{category.name}}</a>
         </div>
       </div>
     </nav>

@@ -1,16 +1,21 @@
 import { Component } from '@angular/core';
 
+class Category {
+  name: string;
+  link: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './scoolar.component.html'
 })
 export class ScoolarComponent {
-  categories: string[];
+  categories: Category[];
   constructor() { 
     this.categories = [
-      'Math',
-      'French',
-      'Deutsch'
+      {name: 'Math', link: 'math'},
+      {name: 'French', link: 'french'},
+      {name: 'German', link: 'german'}
     ];
   }
 }
