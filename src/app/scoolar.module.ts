@@ -5,19 +5,21 @@ import { FormsModule } from '@angular/forms';
 import { ScoolarComponent } from './scoolar.component';
 import { ScoolarRoutingModule } from './scoolar-routing.module';
 
-import { MathComponent } from "app/modules/math/math.component";
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { MathModule } from "app/modules/math/math.module";
+import { InputNumberComponent } from './common/components/input-number/input-number.component';
 
 @NgModule({
-  declarations: [
-    ScoolarComponent,
-    MathComponent,
-    PageNotFoundComponent,
-  ],
   imports: [
     BrowserModule,
     FormsModule,
+    MathModule,
     ScoolarRoutingModule
+  ],
+  declarations: [
+    ScoolarComponent,
+    PageNotFoundComponent,
+    InputNumberComponent
   ],
   providers: [],
   bootstrap: [ScoolarComponent]

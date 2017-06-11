@@ -1,0 +1,18 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      Calculation chain
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+        <ng-container *ngFor="let element of calculation;let index = index;let last = last;let first  = first" class="control">
+            <span>{{element}}</span>
+            <input type="text" *ngIf="!last" [(ngModel)]="calculationInput[index]" (keyup)="onKeyUp($event)">
+        </ng-container>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a class="card-footer-item" (click)="calculate()">Next</a>
+  </footer>
+</div>

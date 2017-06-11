@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { CalculationChainComponent} from './calculation-chain/calculation-chain.component';
+import { MathComponent } from "app/modules/math/math.component";
+
+const routes: Routes = [
+  {path: 'math/calculation-chain', component: CalculationChainComponent},
+  {path: 'math', component: MathComponent}
+];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forChild(routes)
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class MathRoutingModule { }
