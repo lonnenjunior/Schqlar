@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { ScoolarComponent } from './scoolar.component';
 import { ScoolarRoutingModule } from './scoolar-routing.module';
 
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { WelcomeComponent } from './common/components/welcome/welcome.component';
+import { PageNotFoundComponent } from './common/components/page-not-found/page-not-found.component';
 import { MathModule } from "app/modules/math/math.module";
-import { InputNumberComponent } from './common/components/input-number/input-number.component';
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import { InputNumberComponent } from './common/components/input-number/input-num
   declarations: [
     ScoolarComponent,
     PageNotFoundComponent,
-    InputNumberComponent
+    WelcomeComponent
   ],
   providers: [],
   bootstrap: [ScoolarComponent]
