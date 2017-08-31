@@ -1,13 +1,23 @@
-<div class="columns">
+<!--div class="columns">
   <div class="column">
     <nav class="nav has-shadow">
       <div class="container">
         <div class="nav-left">
           <a class="nav-item" href="">
-            <!--img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo"-->
+            <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo">
             Scoolar
           </a>
-          <a class="nav-item is-tab is-hidden-mobile" *ngFor="let category of categories" [routerLink]="category.link" routerLinkActive="is-active">{{category.name}}</a>
+          <ng-container *ngIf="isLoggedIn">
+            <a class="nav-item is-tab is-hidden-mobile" *ngFor="let category of categories" [routerLink]="category.link" routerLinkActive="is-active">{{category.name}}</a>
+          </ng-container>
+        </div>
+        <div class="nav-right nav-menu">
+          <a class="nav-item" *ngIf="!isLoggedIn" routerLink="login">
+            Login
+          </a>
+          <a class="nav-item" *ngIf="isLoggedIn">
+            Logout
+          </a>
         </div>
       </div>
     </nav>
@@ -20,3 +30,92 @@
   </div>
   <div class="column is-2"></div>
 </div>
+<div class="columns">
+  <div class="column is-one-quarter">
+    <aside class="menu">
+      <p class="menu-label">
+        <a href="math">Math</a>
+      </p>
+      <ul class="menu-list">
+        <li><a>Spiel 1</a></li>
+        <li><a>Spiel 2</a></li>
+      </ul>
+      <p class="menu-label">
+        Gramatik
+      </p>
+      <ul class="menu-list">
+        <li><a>Team Settings</a></li>
+        <li>
+          <a class="is-active">Manage Your Team</a>
+          <ul>
+            <li><a>Members</a></li>
+            <li><a>Plugins</a></li>
+            <li><a>Add a member</a></li>
+          </ul>
+        </li>
+        <li><a>Invitations</a></li>
+        <li><a>Cloud Storage Environment Settings</a></li>
+        <li><a>Authentication</a></li>
+      </ul>
+      <p class="menu-label">
+        Transactions
+      </p>
+      <ul class="menu-list">
+        <li><a>Payments</a></li>
+        <li><a>Transfers</a></li>
+        <li><a>Balance</a></li>
+      </ul>
+    </aside>
+  </div>
+  <div class="column">
+    <router-outlet></router-outlet>
+  </div>
+</div-->
+<nav class="nav is-dark has-shadow" id="top">
+  <div class="container">
+    <div class="nav-left">
+      <a class="nav-item" href="/">
+          Scoolar
+        </a>
+    </div>
+    <div class="nav-right nav-menu">
+      <a *ngFor="let category of categories" [routerLink]="category.link" class="nav-item is-tab" routerLinkActive="is-active">
+          {{category.name}}
+        </a>
+    </div>
+  </div>
+</nav>
+<div class="columns">
+  <aside class="column is-2 aside hero is-fullheight is-hidden-mobile">
+    <div>
+      <div class="main">
+        <a href="math/calculation-chain" class="item active">
+          <span class="name">Übung 1</span>
+        </a>
+        <a href="math" class="item active">
+          <span class="name">Übung 2</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <div class="content column is-10">
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="has-text-centered">
+      <p>
+        <strong>Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
+      </p>
+      <p>
+        <a class="icon" href="https://github.com/jgthms/bulma">
+            <i class="fa fa-github"></i>
+          </a>
+      </p>
+    </div>
+  </div>
+</footer>

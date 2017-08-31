@@ -1,0 +1,52 @@
+<!--div class="columns">
+  <div class="column is-one-third is-offset-one-third">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="field">
+        <label for="username" class="label">Username</label>
+        <p class="control">
+          <input id="username" class="input" type="text" placeholder="Username" [(ngModel)]="model.username" name="username" required>
+        </p>
+      </div>
+      <div class="field">
+        <label for="password" class="label">Password</label>
+        <p class="control">
+          <input id="password" class="input" type="password" placeholder="Password" [(ngModel)]="model.password" name="password" required>
+        </p>
+      </div>
+      <div class="field is-grouped">
+        <p class="control">
+          <button class="button is-primary" [disabled]="!loginForm.form.valid">Submit</button>
+        </p>
+        <p class="control">
+          <button class="button is-link">Cancel</button>
+        </p>
+      </div>
+    </form>
+  </div>
+</div-->
+<div class="columns">
+  <div class="column is-one-third is-offset-one-third">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="field">
+        <label class="label">Username</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="Username" formControlName="username" required>
+        </p>
+      </div>
+      <div class="field">
+        <label class="label">Password</label>
+        <p class="control">
+          <input class="input" type="password" placeholder="Password" formControlName="password">
+        </p>
+      </div>
+      <div class="field is-grouped">
+        <p class="control">
+          <button class="button is-primary" [disabled]="loginForm.status != 'VALID'">Submit</button>
+        </p>
+        <p class="control">
+          <button type="button" class="button is-link">Cancel</button>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

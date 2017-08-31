@@ -7,6 +7,7 @@
 
 # dependencies
 /node_modules
+/log.txt
 
 # IDEs and editors
 /.idea
@@ -32,6 +33,10 @@
 npm-debug.log
 testem.log
 /typings
+/_replicator
+/_users
+/pouch__all_dbs__
+/scoolar
 
 # e2e
 /e2e/*.js
