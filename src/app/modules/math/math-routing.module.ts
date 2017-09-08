@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CalculationChainComponent} from './calculation-chain/calculation-chain.component';
-import { MathComponent } from "app/modules/math/math.component";
+import { MathComponent } from "./math.component";
 
 const routes: Routes = [
   {path: 'math/calculation-chain', component: CalculationChainComponent},

@@ -9,14 +9,17 @@ import { ScoolarRoutingModule } from './scoolar-routing.module';
 import { WelcomeComponent } from './common/components/welcome/welcome.component';
 import { PageNotFoundComponent } from './common/components/page-not-found/page-not-found.component';
 import { MathModule } from "app/modules/math/math.module";
+import { AdminModule } from "app/modules/admin/admin.module";
 import { LoginComponent } from './common/components/login/login.component';
 import { PouchdbService } from "app/common/services/pouchdb.service";
+import { SubmenuComponent } from './common/components/submenu/submenu.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     MathModule,
+    AdminModule,
     ScoolarRoutingModule,
     ReactiveFormsModule 
   ],
@@ -24,7 +27,8 @@ import { PouchdbService } from "app/common/services/pouchdb.service";
     ScoolarComponent,
     PageNotFoundComponent,
     WelcomeComponent,
-    LoginComponent
+    LoginComponent,
+    SubmenuComponent
   ],
   providers: [PouchdbService],
   bootstrap: [ScoolarComponent]
