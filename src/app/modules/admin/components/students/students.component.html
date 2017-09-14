@@ -1,0 +1,26 @@
+<div class="columns">
+  <div class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4">
+              <a [routerLink]="['..', 'student', 'new']">+ New student</a>
+            </p>
+          </div>
+        </div>
+        <div class="content">
+          <p>Creating a new student</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let student of students" class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop">
+    <student-small [student]="student"></student-small>
+  </div>
+</div>

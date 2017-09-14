@@ -36,7 +36,7 @@ testem.log
 /_replicator
 /_users
 /pouch__all_dbs__
-/scoolar
+/scoolar*
 
 # e2e
 /e2e/*.js

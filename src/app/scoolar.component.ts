@@ -22,11 +22,5 @@ export class ScoolarComponent {
       {name: 'German', link: 'german'},
       {name: 'Admin', link: 'admin'},
     ];
-
-    // pouchSvc.put({'_id': 'test', 'name': 'obo'})
-    pouchSvc.get('test').subscribe((doc) => {
-      console.log(doc);
-    })
-
   }
 }

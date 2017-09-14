@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CalculationChainComponent} from './calculation-chain/calculation-chain.component';
+import { CalculationChainComponent} from './components/calculation-chain/calculation-chain.component';
 import { MathComponent } from "./math.component";
 
 const routes: Routes = [

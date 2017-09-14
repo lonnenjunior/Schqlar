@@ -4,7 +4,7 @@ import { FormsModule }   from '@angular/forms';
 
 import { MathRoutingModule } from './math-routing.module';
 import { MathComponent } from './math.component';
-import { CalculationChainComponent } from "app/modules/math/calculation-chain/calculation-chain.component";
+import { CalculationChainComponent } from "./components/calculation-chain/calculation-chain.component";
 import { MathService } from "app/common/services/math.service";
 
 @NgModule({

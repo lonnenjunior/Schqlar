@@ -1,0 +1,100 @@
+<!--div class="media" *ngIf="student">
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>{{student.firstname}} {{student.lastname}}</strong>
+        <small>({{student.birthdate}})</small>
+      </p>
+      <p>{{student.address}}</p>
+      <p>{{student.locality}}</p>
+      <p>{{student.phone}}</p>
+      <h6 class="title is-5">Comments</h6>
+      <div class="media-content" *ngFor="let comment of student.comments">
+        <div class="content">
+          <h6 class="title is-6 tag is-primary">
+            {{comment.credatim.toDateString()}}
+          </h6>
+          <textarea class="textarea" [value]="comment.comment" disabled></textarea>
+        </div>
+      </div>
+      <div class="media-content">
+        <div class="content">
+          <textarea class="textarea" placeholder="Add a comment..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div-->
+<form id="newStudent" [formGroup]="studentForm" novalidate class="card" (ngSubmit)="onSubmit()">
+  <header class="card-header">
+    <p class="card-header-title is-4">
+      Student
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="field">
+      <label class="label">Firstname</label>
+      <div class="control has-icons-left">
+        <input class="input" type="text" placeholder="Firstname" formControlName="firstname">
+      </div>
+      <p *ngIf="firstname.invalid" class="help is-danger">* The firstname must at least contain 3 letters</p>
+    </div>
+    <div class="field">
+      <label class="label">Lastname</label>
+      <div class="control has-icons-left">
+        <input class="input" type="text" placeholder="Lastname" formControlName="lastname">
+      </div>
+      <p *ngIf="lastname.invalid" class="help is-danger">The firstname must at least contain 3 letters</p>
+    </div>
+    <div class="field">
+      <label class="label">Birthdate</label>
+      <div class="control has-icons-left">
+        <input class="input" type="text" placeholder="Birthdate" formControlName="birthdate">
+      </div>
+      <p *ngIf="birthdate.invalid" class="help is-danger">The birthdate should match this format: dd.mm.YYYY</p>
+    </div>
+    <div class="field">
+      <label class="label">Address</label>
+      <div class="control has-icons-left">
+        <input class="input" type="text" placeholder="Address" formControlName="address">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Locality</label>
+      <div class="control has-icons-left">
+        <input class="input" type="text" placeholder="Locality" formControlName="locality">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Phone number</label>
+      <div class="control has-icons-left">
+        <input class="input" type="text" placeholder="Phone number" formControlName="phone">
+      </div>
+    </div>
+    <!--div class="media-content" *ngFor="let comment of student.comments">
+      <div class="content">
+        <h6 class="title is-6 tag is-primary">
+          {{comment.credatim.toDateString()}}
+        </h6>
+        <textarea class="textarea" [value]="comment.comment" disabled></textarea>
+      </div>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <textarea class="textarea" placeholder="Add a comment..."></textarea>
+      </div>
+    </div-->
+  </div>
+  <footer class="card-footer">
+    <a class="card-footer-item">
+        <button class="button" type="reset">
+          Cancel
+        </button>
+      </a>
+    <a class="card-footer-item ">
+        <button class="button is-primary" style="height: 100%" type="submit" [disabled]="studentForm.status == 'INVALID'">
+            Save
+          </button>
+      </a>
+  </footer>
+</form>
